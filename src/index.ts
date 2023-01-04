@@ -99,7 +99,7 @@ async function getPolicyStates(cred: AzureCliCredential, resourceIds: string[]) 
         isRealTimePolicy(policyState.policyDefinitionId ?? "") &&
         lowerCaseResourceIds.includes(resourceId.toLocaleLowerCase())
       ) {
-        if (policyState.isCompliant === "true")
+        if (policyState.isCompliant)
         {
           core.info(`Resource Id: ${resourceId}\tDefinition Id: ${policyState.policyDefinitionId}\tIs Compliant: ${policyState.isCompliant}`);
         } else {
