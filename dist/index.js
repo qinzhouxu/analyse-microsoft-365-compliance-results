@@ -141,12 +141,7 @@ function getPolicyStates(cred, resourceIds) {
                         const resourceId = (_d = policyState.resourceId) !== null && _d !== void 0 ? _d : "";
                         if (isRealTimePolicy((_e = policyState.policyDefinitionId) !== null && _e !== void 0 ? _e : "") &&
                             lowerCaseResourceIds.includes(resourceId.toLocaleLowerCase())) {
-                            if (policyState.isCompliant) {
-                                core.info(`Resource Id: ${resourceId}\tDefinition Id: ${policyState.policyDefinitionId}\tIs Compliant: ${policyState.isCompliant}`);
-                            }
-                            else {
-                                core.error(`Resource Id: ${resourceId}\tDefinition Id: ${policyState.policyDefinitionId}\tIs Compliant: ${policyState.isCompliant}`);
-                            }
+                            core.info(`Resource Id: ${resourceId}\tDefinition Id: ${policyState.policyDefinitionId}\tIs Compliant: ${policyState.isCompliant}`);
                         }
                     }
                     finally {
